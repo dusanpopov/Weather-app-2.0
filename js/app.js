@@ -11,11 +11,11 @@ const icon = document.querySelector(".icon img");
 
 const updatedUI = (data) => {
 
-    const {locationDetails, weather} = data;
+const {locationDetails, weather} = data;
 
-    cityName.textContent = `${locationDetails.EnglishName}`;
-    currentWeather.textContent = `${weather.WeatherText}`;
-    currentTemperature.textContent = `${weather.Temperature.Metric.Value}`;
+cityName.textContent = `${locationDetails.EnglishName}`;
+currentWeather.textContent = `${weather.WeatherText}`;
+currentTemperature.textContent = `${weather.Temperature.Metric.Value}`;
 
 // Icon images
 
@@ -33,6 +33,7 @@ const updateLocation = async (location) => {
 }
 
 cityForm.addEventListener("submit", (e) => {
+    
     e.preventDefault();
 
     const location = cityForm.city.value.trim();
@@ -42,5 +43,5 @@ cityForm.addEventListener("submit", (e) => {
     updateLocation(location)
     .then(data => updatedUI(data))
     .catch(err => console.log(err)); 
-
+    
 });
