@@ -26,5 +26,4 @@ const getWeather = async (locationId) => {
 getCity("Sid").then(data => {
     return getWeather(data.Key);
 }).then(data => {
-
 }).catch(err => console.log(err));
